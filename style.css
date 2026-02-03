@@ -1,96 +1,83 @@
-.main{
-    background: linear-gradient(120deg, #02050a 0%, #06142e 100%);
-    height : 650px;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 100px;
-    font-style: normal;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+html, body {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.main {
+    background: linear-gradient(120deg, #02050a 0%, #06142e 100%);
+    min-height: 100vh;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    padding: 20px;
+    padding-bottom: 60px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
 
 .btn-back {
     position: absolute;
-    top: 40px;
-    left: 40px;
-    width: 60px;
-    height: 60px;
-    
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
     z-index: 100; 
     transition: all 0.4s ease;
     overflow: hidden; 
-}
-
-
-.btn-back::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    border-radius: 50% 50% 0 0;
-    pointer-events: none;
+    cursor: pointer;
 }
 
 .btn-back:hover {
     transform: scale(1.1); 
 }
 
-.judul{
+.question-container {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 60px; 
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.judul {
     text-align: center;
-    font-size: 60px;
+    font-size: clamp(32px, 5vw, 60px); 
     font-weight: 600;
-    color : white
-}
-
-.textBox{
-    text-align: left;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-weight: 600;
-    font-size: 15px;
     color: white;
-    width: 550px;
-    background: linear-gradient(
-        135deg, 
-        rgba(255, 255, 255, 0.05), 
-        rgba(255, 255, 255, 0.01)
-    );
-    backdrop-filter: blur(25px); 
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    
+    margin-bottom: 20px;
 }
 
-
-.boxTitle{
-    font-size: 20px;
-}
-
-.container{
-    justify-content: center;
+.container {
     display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px; 
 }
 
-.button{
-    margin-top: 20px;
-    text-align: center;
-    font-weight: 600;
-    color: white;
-    width: 550px;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+.textBox, .button {
+    width: 100%;
+    max-width: 550px;
+    padding: 15px 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
     background: linear-gradient(
         135deg, 
         rgba(255, 255, 255, 0.05), 
@@ -103,16 +90,76 @@
     border-left: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: left; 
+    font-weight: 600;
+    font-size: 16px;
     transition: 0.3s ease;
-    
-    
 }
 
-.button:hover{
+.button {
+    margin-top: 0; 
+    text-align: center; 
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+}
+
+.boxTitle {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: hsl(0, 0%, 100%); 
+}
+
+.button:hover {
     transform: translateY(-4px);
-    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6);
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.button:active{
+.button:active {
     transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 15px;
+    }
+    
+    .btn-back {
+        top: 15px;
+        left: 15px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .judul {
+        margin-top: 20px;
+    }
+
+    .textBox, .button {
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+    
+    .boxTitle {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .judul {
+        font-size: 32px;
+    }
+    
+    .textBox, .button {
+        width: 100%; 
+        border-radius: 15px;
+    }
 }
