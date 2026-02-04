@@ -271,30 +271,37 @@ function showResult() {
         
         const display = document.getElementById('score-display');
         display.innerHTML = `
-            <div style="margin-bottom: 20px;">
-                <h2 style="font-size: 28px; margin-bottom: 10px;">${resultData.title}</h2>
-                <p>${resultData.desc}</p>
+            <div class="mb-3">
+                <h2 style="font-size: 24px; margin-bottom: 5px;">${resultData.title}</h2>
+                <p style="font-size: 14px; margin-bottom: 0;">${resultData.desc}</p>
             </div>
 
-            <div style="text-align: left; background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; margin-bottom: 15px;">
-                <strong>📚 Jurusan yang Direkomendasikan:</strong>
-                <ul style="margin-top: 5px; margin-bottom: 15px; padding-left: 20px;">
-                    ${resultData.jurusan.map(item => `<li>${item}</li>`).join('')}
-                </ul>
+            <div class="text-start" style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 10px; margin-bottom: 10px;">
+                <div class="row g-2">
+                    <div class="col-6">
+                        <strong style="font-size: 13px;">📚 Jurusan:</strong>
+                        <ul style="margin: 0; padding-left: 15px; font-size: 12px;">
+                            ${resultData.jurusan.map(item => `<li>${item}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <strong style="font-size: 13px;">💼 Karir:</strong>
+                        <ul style="margin: 0; padding-left: 15px; font-size: 12px;">
+                            ${resultData.karir.map(item => `<li>${item}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
 
-                <strong>💼 Karir Potensial:</strong>
-                <ul style="margin-top: 5px; margin-bottom: 15px; padding-left: 20px;">
-                    ${resultData.karir.map(item => `<li>${item}</li>`).join('')}
-                </ul>
-
-                <strong>🛠 Skill yang Dibutuhkan:</strong>
-                <ul style="margin-top: 5px; margin-bottom: 0px; padding-left: 20px;">
-                    ${resultData.skill.map(item => `<li>${item}</li>`).join('')}
-                </ul>
+                <div class="mt-2">
+                    <strong style="font-size: 13px;">🛠 Skill:</strong>
+                    <div style="font-size: 12px; margin-top: 2px;">
+                        ${resultData.skill.map(item => `<span class="badge bg-light text-dark bg-opacity-75 me-1" style="font-weight: normal;">${item}</span>`).join('')}
+                    </div>
+                </div>
             </div>
             
-            <p style="font-size: 12px; opacity: 0.7;">
-                Skor Akhir: Analisis:${scores.analisis}, Kreatif:${scores.kreatif}, Praktik:${scores.praktik}, Sosial:${scores.sosial}
+            <p style="font-size: 10px; opacity: 0.6; margin: 0;">
+                Skor: A:${scores.analisis} K:${scores.kreatif} P:${scores.praktik} S:${scores.sosial}
             </p>
         `;
     }
