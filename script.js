@@ -11,10 +11,19 @@ let availableQuestions = ['q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10']
 
 let currentQuestionId = 'q1';
 
-document.addEventListener('DOMContentLoaded', () => {
+    // We don't auto-show currentQuestionId on load anymore, waiting for startQuiz
+    // showQuestion('q1'); // Removed
+    // updateBackIconVisibility(); // Removed
+
+function startQuiz() {
+    document.getElementById('landing-page').style.display = 'none';
+    document.getElementById('quiz-page').style.display = 'block';
+    
+    // Reset state if needed (though reload usually clears it, this helps if we don't reload)
+    // For now we assume clean slate or simple reset
+    
     showQuestion('q1');
-    updateBackIconVisibility();
-});
+}
 
 function showQuestion(id) {
 
@@ -115,7 +124,15 @@ function handleBack(e) {
     e.preventDefault();
     
     if (historyStack.length === 0) {
-        window.location.href = 'index.html';
+        // Go back to landing page
+        document.getElementById('landing-page').style.display = 'block';
+        document.getElementById('quiz-page').style.display = 'none';
+        
+        // Optional: Reset scores specifically if they want to ensure no residue, 
+        // though logically if we're at stack 0, we haven't answered anything yet 
+        // OR we just undid the first answer?
+        // Actually if stack is 0, we are at Q1. User hasn't answered Q1 yet (or just undid it).
+        // So scores should be 0.
         return;
     }
     const lastAction = historyStack.pop();
