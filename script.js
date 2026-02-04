@@ -289,19 +289,19 @@ function showResult() {
         const display = document.getElementById('score-display');
         display.innerHTML = `
             <div class="mb-4">
-                <h2 style="font-size: 32px; margin-bottom: 10px;">${resultData.title}</h2>
+                <h2 style="font-size: 32px; margin-bottom: 10px;">${resultData.title.replace(' (', '<br>(')}</h2>
                 <p style="font-size: 18px; margin-bottom: 0;">${resultData.desc}</p>
             </div>
 
             <div class="text-start" style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 15px; margin-bottom: 20px;">
                 <div class="row g-3">
-                    <div class="col-6">
+                    <div class="col-12">
                         <strong style="font-size: 18px;">📚 Jurusan:</strong>
                         <ul style="margin: 0; padding-left: 20px; font-size: 16px; margin-top: 5px;">
                             ${resultData.jurusan.map(item => `<li class="mb-1">${item}</li>`).join('')}
                         </ul>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12">
                         <strong style="font-size: 18px;">💼 Karir:</strong>
                         <ul style="margin: 0; padding-left: 20px; font-size: 16px; margin-top: 5px;">
                             ${resultData.karir.map(item => `<li class="mb-1">${item}</li>`).join('')}
