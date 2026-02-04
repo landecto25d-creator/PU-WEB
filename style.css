@@ -1,4 +1,8 @@
 /* Bootstrap Handle Resets */
+:root {
+    color-scheme: light;
+}
+
 /* * {
     margin: 0;
     padding: 0;
