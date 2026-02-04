@@ -301,7 +301,7 @@ function showResult() {
             </div>
             
             <p style="font-size: 10px; opacity: 0.6; margin: 0;">
-                Skor: A:${scores.analisis} K:${scores.kreatif} P:${scores.praktik} S:${scores.sosial}
+                Skor: Analisis:${scores.analisis} Kreatif:${scores.kreatif} Praktik:${scores.praktik} Sosial:${scores.sosial}
             </p>
         `;
     }
