@@ -288,36 +288,36 @@ function showResult() {
         
         const display = document.getElementById('score-display');
         display.innerHTML = `
-            <div class="mb-3">
-                <h2 style="font-size: 24px; margin-bottom: 5px;">${resultData.title}</h2>
-                <p style="font-size: 14px; margin-bottom: 0;">${resultData.desc}</p>
+            <div class="mb-4">
+                <h2 style="font-size: 32px; margin-bottom: 10px;">${resultData.title}</h2>
+                <p style="font-size: 18px; margin-bottom: 0;">${resultData.desc}</p>
             </div>
 
-            <div class="text-start" style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 10px; margin-bottom: 10px;">
-                <div class="row g-2">
+            <div class="text-start" style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 15px; margin-bottom: 20px;">
+                <div class="row g-3">
                     <div class="col-6">
-                        <strong style="font-size: 13px;">📚 Jurusan:</strong>
-                        <ul style="margin: 0; padding-left: 15px; font-size: 12px;">
-                            ${resultData.jurusan.map(item => `<li>${item}</li>`).join('')}
+                        <strong style="font-size: 18px;">📚 Jurusan:</strong>
+                        <ul style="margin: 0; padding-left: 20px; font-size: 16px; margin-top: 5px;">
+                            ${resultData.jurusan.map(item => `<li class="mb-1">${item}</li>`).join('')}
                         </ul>
                     </div>
                     <div class="col-6">
-                        <strong style="font-size: 13px;">💼 Karir:</strong>
-                        <ul style="margin: 0; padding-left: 15px; font-size: 12px;">
-                            ${resultData.karir.map(item => `<li>${item}</li>`).join('')}
+                        <strong style="font-size: 18px;">💼 Karir:</strong>
+                        <ul style="margin: 0; padding-left: 20px; font-size: 16px; margin-top: 5px;">
+                            ${resultData.karir.map(item => `<li class="mb-1">${item}</li>`).join('')}
                         </ul>
                     </div>
                 </div>
 
-                <div class="mt-2">
-                    <strong style="font-size: 13px;">🛠 Skill:</strong>
-                    <div style="font-size: 12px; margin-top: 2px;">
-                        ${resultData.skill.map(item => `<span class="badge bg-light text-dark bg-opacity-75 me-1" style="font-weight: normal;">${item}</span>`).join('')}
+                <div class="mt-4">
+                    <strong style="font-size: 18px;">🛠 Skill:</strong>
+                    <div style="font-size: 16px; margin-top: 8px;">
+                        ${resultData.skill.map(item => `<span class="badge bg-light text-dark bg-opacity-75 me-2 mb-2 p-2" style="font-weight: normal; font-size: 14px;">${item}</span>`).join('')}
                     </div>
                 </div>
             </div>
             
-            <p style="font-size: 10px; opacity: 0.6; margin: 0;">
+            <p style="font-size: 14px; opacity: 0.6; margin: 0;">
                 Skor: Analisis:${scores.analisis} Kreatif:${scores.kreatif} Praktik:${scores.praktik} Sosial:${scores.sosial}
             </p>
         `;
