@@ -13,11 +13,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body class="main d-flex flex-column align-items-center">
+    <!-- Language Selection Modal -->
+    <div id="language-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(120deg, #02050a 0%, #06142e 100%); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <!-- Back Button (Hidden by default, shown when opened via settings) -->
+        <a href="#" class="btn-back" id="modal-back-btn" onclick="closeLanguageModal()" style="display: none; position: absolute; top: 20px; left: 20px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 19L8 12L15 5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="textBox text-center">
+                        <p class="boxTitle mb-4">Select Language / Pilih Bahasa</p>
+                        <div class="d-flex justify-content-center gap-3">
+                            <button class="button" style="width: auto; min-width: 150px; margin: 0;" onclick="setLanguage('id')">
+                                <p class="buttonText m-0 text-center">Bahasa Indonesia</p>
+                            </button>
+                            <button class="button" style="width: auto; min-width: 150px; margin: 0;" onclick="setLanguage('en')">
+                                <p class="buttonText m-0 text-center">English</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Landing Page Wrapper -->
-    <div id="landing-page" style="width: 100%;">
+    <div id="landing-page" style="width: 100%; display: none; position: relative;"> <!-- Hidden by default until language selected -->
+        <!-- Language Settings Button -->
+        <div class="settings-btn" onclick="openLanguageModal()" style="position: absolute; top: 20px; right: 20px; cursor: pointer; z-index: 10;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 12H22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+
         <!-- Judul -->
         <div class="judul mt-5">
-            <p>Career Quest</p>
+            <p data-i18n="landing.title">Career Quest</p>
         </div>
 
         <!-- Content Wrapper -->
@@ -25,10 +62,10 @@
             <div class="row justify-content-center mb-3">
                 <div class="col-12 col-md-8 col-lg-6">
                     <div class="textBox">
-                        <p class="boxTitle">Cara Main</p>
-                        <p>1 Kamu akan menghadapi 5 situasi kehidupan nyata</p>
-                        <p>2 Pilih respons yang paling natural buat kamu</p>
-                        <p>3 Dapatkan profil personality + rekomendasi jurusan & karir yang cocok!</p>
+                        <p class="boxTitle" data-i18n="landing.how_title">Cara Main</p>
+                        <p data-i18n="landing.step1">1 Kamu akan menghadapi 5 situasi kehidupan nyata</p>
+                        <p data-i18n="landing.step2">2 Pilih respons yang paling natural buat kamu</p>
+                        <p data-i18n="landing.step3">3 Dapatkan profil personality + rekomendasi jurusan & karir yang cocok!</p>
                     </div>
                 </div>
             </div>
@@ -37,7 +74,7 @@
                 <div class="col-12 col-md-8 col-lg-6">
                     <!-- Changed link to button with onclick -->
                     <div class="button" onclick="startQuiz()">
-                        <p class="buttonText m-0">MULAI</p>
+                        <p class="buttonText m-0" data-i18n="landing.start">MULAI</p>
                     </div>
                 </div>
             </div>
@@ -406,7 +443,7 @@
                 <div class="row justify-content-center mb-3">
                     <div class="col-12 col-md-8 col-lg-6">
                         <!-- Changed to restart quiz -->
-                        <div class="button" onclick="window.location.reload()">
+                        <div class="button" onclick="resetQuiz()">
                             <p class="buttonText m-0">Kembali ke Halaman Depan</p>
                         </div>
                     </div>
