@@ -1,18 +1,19 @@
-* {
+/* Bootstrap Handle Resets */
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent; 
-}
+} */
 
 html, body {
-    padding-top: 30px;
-    padding-bottom: 20px;
+    /* padding-top: 30px; */
+    /* padding-bottom: 20px; */
     width: 100%;
     min-height: 100vh; 
     min-height: 100dvh; 
-    -webkit-text-size-adjust: 100%; 
-    text-size-adjust: 100%;
+    /* -webkit-text-size-adjust: 100%;  */
+    /* text-size-adjust: 100%; */
     touch-action: manipulation; 
 }
 
@@ -25,9 +26,9 @@ html, body {
     font-style: normal;
     padding: 20px;
     padding-bottom: 60px; 
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
     position: relative;
     overflow-x: hidden;
 }
@@ -56,7 +57,7 @@ html, body {
 
 .question-container {
     width: 100%;
-    max-width: 800px;
+    /* max-width: 800px; */
     margin-top: 60px; 
     animation: fadeIn 0.5s ease-in-out;
     padding-bottom: 40px; 
@@ -75,16 +76,17 @@ html, body {
     margin-bottom: 20px;
 }
 
-.container {
+/* Custom container override or removal - using Bootstrap classes instead */
+/* .container {
     display: flex;
     justify-content: center;
     width: 100%;
     margin-bottom: 15px; 
-}
+} */
 
 .textBox, .button {
     width: 100%;
-    max-width: 550px;
+    /* max-width: 550px; Moved to Bootstrap col sizes */
     padding: 15px 20px;
     padding-bottom: 20px;
     padding-top: 20px;
@@ -115,12 +117,13 @@ html, body {
     -webkit-user-select: none;
 }
 
+/* Fix for anchor tag to not mess up flex layout if used */
 a {
     text-decoration: none;
     color: inherit;
-    width: 100%; 
+    /* width: 100%; 
     display: flex;
-    justify-content: center;
+    justify-content: center; */
 }
 
 .boxTitle {
@@ -142,6 +145,8 @@ a {
     background: rgba(255, 255, 255, 0.2);
 }
 
+/* Manual media queries can be replaced by Bootstrap responsive utilities if needed, 
+   but keeping them for specific font-size adjustments is fine */
 @media (max-width: 768px) {
     .main {
         padding: 15px;

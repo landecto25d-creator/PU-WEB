@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel = "stylesheet" href = "style.css">
+    <title>Career Quest - Pertanyaan</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <div class = "judul">
-        <p>Pertanyaan</p>
-    </div>
 </head>
-<body class="main">
+<body class="main d-flex flex-column align-items-center">
     <!-- Back Button -->
     <a href="#" class="btn-back" id="btn-back" onclick="handleBack(event)">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,99 +19,202 @@
         </svg>
     </a>
 
-    <!-- QUESTION 1: Hackathon Malam -->
-    <div id="q1" class="question-container">
-        <div class="container">
-            <div class="textBox">
-                <p class="boxTitle">Hackathon Malam</p>
-                <p>Kamu dan tim punya 24 jam untuk bikin aplikasi!</p>
-            </div>
-        </div>
-        <!-- Answers -->
-        <div class="container"><div class="button" onclick="selectAnswer(1, 'a', 3, 0, 2, 0)"><p class="buttonText">Jadi lead programmer</p></div></div>
-        <div class="container"><div class="button" onclick="selectAnswer(1, 'b', 1, 3, 0, 0)"><p class="buttonText">Desain UI/UX nya</p></div></div>
-        <div class="container"><div class="button" onclick="selectAnswer(1, 'c', 0, 1, 0, 3)"><p class="buttonText">Presentasi ke juri</p></div></div>
-        <div class="container"><div class="button" onclick="selectAnswer(1, 'd', 0, 0, 2, 2)"><p class="buttonText">Atur strategi tim</p></div></div>
+    <div class="judul mt-5">
+        <p>Pertanyaan</p>
     </div>
 
-    <!-- QUESTION 2: Project Film Sekolah -->
-    <div id="q2" class="question-container" style="display: none;">
-        <div class="container">
-            <div class="textBox">
-                <p class="boxTitle">Project Film Sekolah</p>
-                <p>Tugas kelompok bikin short movie, kamu pilih jadi apa?</p>
-            </div>
-        </div>
-        <!-- Answers -->
-        <div class="container"><div class="button" onclick="selectAnswer(2, 'a', 0, 3, 0, 2)"><p class="buttonText">Sutradara & konsep cerita</p></div></div>
-        <div class="container"><div class="button" onclick="selectAnswer(2, 'b', 0, 2, 0, 2)"><p class="buttonText">Aktor/aktris utama</p></div></div>
-        <div class="container"><div class="button" onclick="selectAnswer(2, 'c', 2, 2, 0, 0)"><p class="buttonText">Editor & efek visual</p></div></div>
-        <div class="container"><div class="button" onclick="selectAnswer(2, 'd', 0, 0, 3, 1)"><p class="buttonText">Produser & logistik</p></div></div>
-    </div>
-
-    <!-- QUESTION 3: Eksperimen Lab Gagal -->
-    <div id="q3" class="question-container" style="display: none;">
-        <div class="container">
-            <div class="textBox">
-                <p class="boxTitle">Eksperimen Lab Gagal</p>
-                <p>Percobaan kimia kamu tidak sesuai teori. Apa yang kamu lakukan?</p>
-            </div>
-        </div>
-        <!-- Answers -->
-        <div class="container"><div class="button" onclick="selectAnswer(3, 'a', 3, 0, 1, 0)"><p class="buttonText">Analisis ulang data & variabel</p></div></div>
-        <div class="container"><div class="button" onclick="selectAnswer(3, 'b', 2, 2, 0, 0)"><p class="buttonText">Cari metode alternatif kreatif</p></div></div>
-        <div class="container"><div class="button" onclick="selectAnswer(3, 'c', 0, 0, 0, 3)"><p class="buttonText">Diskusi sama guru & teman</p></div></div>
-        <div class="container"><div class="button" onclick="selectAnswer(3, 'd', 0, 0, 3, 0)"><p class="buttonText">Coba lagi dengan lebih teliti</p></div></div>
-    </div>
-
-    <!-- QUESTION 4: Startup Kantin Sekolah -->
-    <div id="q4" class="question-container" style="display: none;">
-        <div class="container">
-            <div class="textBox">
-                <p class="boxTitle">Startup Kantin Sekolah</p>
-                <p>Kamu mau buka usaha jajanan. Fokus ke mana?</p>
-            </div>
-        </div>
-        <!-- Answers -->
-        <div class="container"><div class="button" onclick="selectAnswer(4, 'a', 3, 0, 2, 0)"><p class="buttonText">Riset pasar & hitung untung</p></div></div>
-        <div class="container"><div class="button" onclick="selectAnswer(4, 'b', 0, 3, 0, 1)"><p class="buttonText">Bikin branding & packaging keren</p></div></div>
-        <div class="container"><div class="button" onclick="selectAnswer(4, 'c', 0, 1, 0, 3)"><p class="buttonText">Marketing & promosi ke teman</p></div></div>
-        <div class="container"><div class="button" onclick="selectAnswer(4, 'd', 1, 0, 3, 0)"><p class="buttonText">Optimasi produksi & kualitas</p></div></div>
-    </div>
-
-    <!-- QUESTION 5: Proyek Lingkungan -->
-    <div id="q5" class="question-container" style="display: none;">
-        <div class="container">
-            <div class="textBox">
-                <p class="boxTitle">Proyek Lingkungan</p>
-                <p>Kampanye peduli lingkungan di sekolah, peran kamu?</p>
-            </div>
-        </div>
-        <!-- Answers -->
-        <div class="container"><div class="button" onclick="selectAnswer(5, 'a', 0, 3, 0, 1)"><p class="buttonText">Buat poster & konten sosmed</p></div></div>
-        <div class="container"><div class="button" onclick="selectAnswer(5, 'b', 3, 0, 1, 0)"><p class="buttonText">Riset data sampah & solusi</p></div></div>
-        <div class="container"><div class="button" onclick="selectAnswer(5, 'c', 0, 0, 1, 3)"><p class="buttonText">Koordinasi relawan & event</p></div></div>
-        <div class="container"><div class="button" onclick="selectAnswer(5, 'd', 1, 0, 3, 0)"><p class="buttonText">Implementasi sistem daur ulang</p></div></div>
-    </div>
-
-    <!-- Result Placeholder (Hidden) -->
-    <div id="result" class="question-container" style="display: none;">
-        <div class="container">
-            <div class="textBox" style="text-align: center;">
-                <p class="boxTitle">Hasil Kamu</p>
-                <p id="score-display">Updating...</p>
-                <p>Terima kasih telah bermain!</p>
-            </div>
-        </div>
-         <div class="container">
-            <a href="index.html">    
-                <div class="button">
-                    <p class="buttonText">Kembali ke Home</p>
+    <div class="container">
+        <!-- QUESTION 1: Hackathon Malam -->
+        <div id="q1" class="question-container">
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="textBox">
+                        <p class="boxTitle">Hackathon Malam</p>
+                        <p>Kamu dan tim punya 24 jam untuk bikin aplikasi!</p>
+                    </div>
                 </div>
-            </a>
+            </div>
+            
+            <!-- Answers -->
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(1, 'a', 3, 0, 2, 0)"><p class="buttonText m-0">Jadi lead programmer</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(1, 'b', 1, 3, 0, 0)"><p class="buttonText m-0">Desain UI/UX nya</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(1, 'c', 0, 1, 0, 3)"><p class="buttonText m-0">Presentasi ke juri</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(1, 'd', 0, 0, 2, 2)"><p class="buttonText m-0">Atur strategi tim</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUESTION 2: Project Film Sekolah -->
+        <div id="q2" class="question-container" style="display: none;">
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="textBox">
+                        <p class="boxTitle">Project Film Sekolah</p>
+                        <p>Tugas kelompok bikin short movie, kamu pilih jadi apa?</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Answers -->
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(2, 'a', 0, 3, 0, 2)"><p class="buttonText m-0">Sutradara & konsep cerita</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(2, 'b', 0, 2, 0, 2)"><p class="buttonText m-0">Aktor/aktris utama</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(2, 'c', 2, 2, 0, 0)"><p class="buttonText m-0">Editor & efek visual</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(2, 'd', 0, 0, 3, 1)"><p class="buttonText m-0">Produser & logistik</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUESTION 3: Eksperimen Lab Gagal -->
+        <div id="q3" class="question-container" style="display: none;">
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="textBox">
+                        <p class="boxTitle">Eksperimen Lab Gagal</p>
+                        <p>Percobaan kimia kamu tidak sesuai teori. Apa yang kamu lakukan?</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Answers -->
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(3, 'a', 3, 0, 1, 0)"><p class="buttonText m-0">Analisis ulang data & variabel</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(3, 'b', 2, 2, 0, 0)"><p class="buttonText m-0">Cari metode alternatif kreatif</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(3, 'c', 0, 0, 0, 3)"><p class="buttonText m-0">Diskusi sama guru & teman</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(3, 'd', 0, 0, 3, 0)"><p class="buttonText m-0">Coba lagi dengan lebih teliti</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUESTION 4: Startup Kantin Sekolah -->
+        <div id="q4" class="question-container" style="display: none;">
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="textBox">
+                        <p class="boxTitle">Startup Kantin Sekolah</p>
+                        <p>Kamu mau buka usaha jajanan. Fokus ke mana?</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Answers -->
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(4, 'a', 3, 0, 2, 0)"><p class="buttonText m-0">Riset pasar & hitung untung</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(4, 'b', 0, 3, 0, 1)"><p class="buttonText m-0">Bikin branding & packaging keren</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(4, 'c', 0, 1, 0, 3)"><p class="buttonText m-0">Marketing & promosi ke teman</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(4, 'd', 1, 0, 3, 0)"><p class="buttonText m-0">Optimasi produksi & kualitas</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUESTION 5: Proyek Lingkungan -->
+        <div id="q5" class="question-container" style="display: none;">
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="textBox">
+                        <p class="boxTitle">Proyek Lingkungan</p>
+                        <p>Kampanye peduli lingkungan di sekolah, peran kamu?</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Answers -->
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(5, 'a', 0, 3, 0, 1)"><p class="buttonText m-0">Buat poster & konten sosmed</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(5, 'b', 3, 0, 1, 0)"><p class="buttonText m-0">Riset data sampah & solusi</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(5, 'c', 0, 0, 1, 3)"><p class="buttonText m-0">Koordinasi relawan & event</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(5, 'd', 1, 0, 3, 0)"><p class="buttonText m-0">Implementasi sistem daur ulang</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Placeholder (Hidden) -->
+        <div id="result" class="question-container" style="display: none;">
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="textBox" style="text-align: center;">
+                        <p class="boxTitle">Hasil Kamu</p>
+                        <p id="score-display">Updating...</p>
+                        <p>Terima kasih telah bermain!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <a href="index.html" class="d-block text-decoration-none">    
+                        <div class="button">
+                            <p class="buttonText m-0">Kembali ke Home</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
     
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

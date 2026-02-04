@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function showQuestion(id) {
-    // Height handled by CSS min-height: 100vh
+
     const mainContainer = document.querySelector('.main');
-    if (mainContainer) mainContainer.style.height = ''; // Clear manual height
+    if (mainContainer) mainContainer.style.height = ''; 
 
     const allQuestions = document.querySelectorAll('.question-container');
     allQuestions.forEach(q => q.style.display = 'none');
