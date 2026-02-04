@@ -7,7 +7,7 @@ let scores = {
 
 let historyStack = [];
 
-let availableQuestions = ['q2', 'q3', 'q4', 'q5'];
+let availableQuestions = ['q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10'];
 
 let currentQuestionId = 'q1';
 
@@ -29,6 +29,58 @@ function showQuestion(id) {
         target.style.display = 'block';
         currentQuestionId = id;
     }
+    
+    // Progress Bar Logic
+    const progressContainer = document.getElementById('progress-container');
+    const backBtn = document.querySelector('.btn-back');
+    
+    if (id === 'result') {
+        if (progressContainer) progressContainer.style.display = 'none';
+        if (backBtn) backBtn.style.display = 'none'; // Hide back button on result
+    } else {
+        if (progressContainer) progressContainer.style.display = 'block';
+        if (backBtn) backBtn.style.display = 'flex'; // Show back button on questions
+        updateProgressBar();
+    }
+}
+
+function updateProgressBar() {
+    const allQs = 10; // Total questions hardcoded as per requirement (5 initial + 5 added)
+    // Calculate current question number: 1 (initial) + history size
+    let currentNum = historyStack.length + 1;
+    if (currentNum > allQs) currentNum = allQs;
+
+    const barInner = document.getElementById('progress-bar-inner');
+    const textLabel = document.getElementById('progress-text');
+    
+    if (barInner) {
+        barInner.innerHTML = '';
+        for (let i = 1; i <= allQs; i++) {
+            const seg = document.createElement('div');
+            seg.style.flex = '1';
+            seg.style.height = '4px';
+            seg.style.borderRadius = '2px';
+            seg.style.transition = 'all 0.3s ease';
+            
+            if (i === currentNum) {
+                // Active Question: Glowing/Lit
+                seg.style.background = '#ffffff';
+                seg.style.boxShadow = '0 0 8px rgba(255, 255, 255, 0.8)';
+                seg.style.opacity = '1';
+            } else if (i < currentNum) {
+                // Past Questions: Semi-lit/completed
+                seg.style.background = 'rgba(255, 255, 255, 0.5)';
+                seg.style.boxShadow = 'none';
+            } else {
+                // Future Questions: Darker/Idle
+                seg.style.background = 'rgba(255, 255, 255, 0.1)';
+                seg.style.boxShadow = 'none';
+            }
+            barInner.appendChild(seg);
+        }
+    }
+    
+    if (textLabel) textLabel.innerText = `Soal ${currentNum} dari ${allQs}`;
 }
 
 function selectAnswer(questionNum, answerChar, a, k, p, s) {
@@ -56,7 +108,7 @@ function selectAnswer(questionNum, answerChar, a, k, p, s) {
         showResult();
     }
     
-    updateBackIconVisibility();
+    // updateBackIconVisibility(); // Removed as irrelevant? No, logic moved to showQuestion
 }
 
 function handleBack(e) {
@@ -75,17 +127,17 @@ function handleBack(e) {
     
     console.log("Rollback scores:", scores);
 
+    // Push back the current question to available if it wasn't the result page
     if (currentQuestionId !== 'result') {
-        if (currentQuestionId !== 'result') {
-            availableQuestions.push(currentQuestionId);
-        if (currentQuestionId !== 'result') {
-            availableQuestions.push(currentQuestionId);
-        }
+         availableQuestions.push(currentQuestionId);
     }
     
     showQuestion(lastAction.questionId);
-    updateBackIconVisibility();
+    // updateBackIconVisibility();
 }
+
+function updateBackIconVisibility() {
+    // Deprecated/integrated into showQuestion
 }
 
 const resultDetails = {
@@ -196,6 +248,13 @@ function showResult() {
     allQuestions.forEach(q => q.style.display = 'none');
     
     const resDiv = document.getElementById('result');
+    
+    // Hide Progress Bar and Back Button
+    const progressContainer = document.getElementById('progress-container');
+    if (progressContainer) progressContainer.style.display = 'none';
+    const backBtn = document.querySelector('.btn-back');
+    if (backBtn) backBtn.style.display = 'none';
+
     if (resDiv) {
         resDiv.style.display = 'block';
         currentQuestionId = 'result';

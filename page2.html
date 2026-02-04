@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,9 +19,15 @@
         </svg>
     </a>
 
-    <div class="judul mt-5">
-        <p>Pertanyaan</p>
+    <!-- Progress Bar -->
+    <div id="progress-container" class="container">
+        <div id="progress-bar-inner" class="d-flex" style="gap: 5px; margin-bottom: 5px;">
+            <!-- Progress segments injected by JS -->
+        </div>
+        <p id="progress-text" class="text-center text-white">Soal 1 dari 10</p>
     </div>
+
+
 
     <div class="container">
         <!-- QUESTION 1: Hackathon Malam -->
@@ -186,6 +192,171 @@
             <div class="row justify-content-center mb-3">
                 <div class="col-12 col-md-8 col-lg-6">
                     <div class="button" onclick="selectAnswer(5, 'd', 1, 0, 3, 0)"><p class="buttonText m-0">Implementasi sistem daur ulang</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUESTION 6: Tim E-Sports Sekolah -->
+        <div id="q6" class="question-container" style="display: none;">
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="textBox">
+                        <p class="boxTitle">Tim E-Sports Sekolah</p>
+                        <p>Sekolah mau ikut kompetisi e-sports. Kamu kontribusi di mana?</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Answers -->
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(6, 'a', 3, 0, 0, 2)"><p class="buttonText m-0">Jadi strategi coach & analisis lawan</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(6, 'b', 0, 3, 1, 0)"><p class="buttonText m-0">Desain logo & jersey tim</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(6, 'c', 0, 0, 1, 3)"><p class="buttonText m-0">Jadi kapten & motivator tim</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(6, 'd', 1, 0, 3, 0)"><p class="buttonText m-0">Atur jadwal latihan & logistik</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUESTION 7: Aplikasi Solusi Sekolah -->
+        <div id="q7" class="question-container" style="display: none;">
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="textBox">
+                        <p class="boxTitle">Aplikasi Solusi Sekolah</p>
+                        <p>Kamu punya ide bikin aplikasi untuk mempermudah siswa. Fokus kamu ke mana?</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Answers -->
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(7, 'a', 3, 0, 2, 0)"><p class="buttonText m-0">Coding & develop fitur-fiturnya</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(7, 'b', 1, 0, 0, 3)"><p class="buttonText m-0">Riset kebutuhan user & survey</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(7, 'c', 0, 3, 1, 0)"><p class="buttonText m-0">Desain interface yang user-friendly</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(7, 'd', 0, 2, 0, 2)"><p class="buttonText m-0">Bikin materi untuk presentasi</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUESTION 8: Acara Donor Darah -->
+        <div id="q8" class="question-container" style="display: none;">
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="textBox">
+                        <p class="boxTitle">Acara Donor Darah</p>
+                        <p>OSIS mengadakan donor darah. Peran kamu yang paling sesuai?</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Answers -->
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(8, 'a', 0, 0, 3, 2)"><p class="buttonText m-0">Koordinasi PMI & atur rundown acara</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(8, 'b', 0, 1, 0, 3)"><p class="buttonText m-0">Buat kampanye & ajak teman-teman</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(8, 'c', 0, 3, 1, 0)"><p class="buttonText m-0">Desain poster & konten promosi</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(8, 'd', 3, 0, 1, 0)"><p class="buttonText m-0">Catat data & kelola database pendonor</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUESTION 9: Festival Budaya Sekolah -->
+        <div id="q9" class="question-container" style="display: none;">
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="textBox">
+                        <p class="boxTitle">Festival Budaya Sekolah</p>
+                        <p>Sekolah mengadakan festival budaya. Kamu mau berkontribusi sebagai apa?</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Answers -->
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(9, 'a', 0, 3, 0, 2)"><p class="buttonText m-0">Koreografer tari tradisional</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(9, 'b', 0, 1, 0, 3)"><p class="buttonText m-0">MC & pembawa acara</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(9, 'c', 1, 0, 3, 0)"><p class="buttonText m-0">Manage panggung & sound system</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(9, 'd', 2, 2, 0, 0)"><p class="buttonText m-0">Dokumentasi foto & video</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUESTION 10: Lomba Inovasi Teknologi -->
+        <div id="q10" class="question-container" style="display: none;">
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="textBox">
+                        <p class="boxTitle">Lomba Inovasi Teknologi</p>
+                        <p>Kamu ikut lomba cipta inovasi teknologi untuk memecahkan masalah sosial.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Answers -->
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(10, 'a', 3, 0, 0, 1)"><p class="buttonText m-0">Riset masalah & kumpulkan data lapangan</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(10, 'b', 2, 0, 3, 0)"><p class="buttonText m-0">Bikin prototype & testing produk</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(10, 'c', 0, 3, 1, 0)"><p class="buttonText m-0">Desain packaging & branding produk</p></div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="button" onclick="selectAnswer(10, 'd', 0, 2, 0, 3)"><p class="buttonText m-0">Presentasi & menyampaikan ide ke investor</p></div>
                 </div>
             </div>
         </div>
