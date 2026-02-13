@@ -15,7 +15,6 @@ let currentLang = 'id'; // Default
 const translations = {
     id: {
         landing: {
-            title: "Career Quest",
             how_title: "Cara Main",
             step1: "1. Kamu akan menghadapi 10 situasi kehidupan nyata",
             step2: "2. Pilih respons yang paling natural buat kamu",
@@ -152,7 +151,6 @@ const translations = {
     },
     en: {
         landing: {
-            title: "Career Quest",
             how_title: "How to Play",
             step1: "1. You will face 10 real-life situations",
             step2: "2. Choose the response that feels most natural to you",
@@ -340,7 +338,6 @@ function applyTranslations() {
     const t = translations[currentLang];
     
     // Landing Page
-    document.querySelector('[data-i18n="landing.title"]').innerText = t.landing.title;
     document.querySelector('[data-i18n="landing.how_title"]').innerText = t.landing.how_title;
     document.querySelector('[data-i18n="landing.step1"]').innerText = t.landing.step1;
     document.querySelector('[data-i18n="landing.step2"]').innerText = t.landing.step2;
