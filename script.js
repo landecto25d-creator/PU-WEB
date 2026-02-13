@@ -542,6 +542,11 @@ function showResult() {
         else if (scores.praktik === maxScore) dominantKey = 'praktik';
         else if (scores.sosial === maxScore) dominantKey = 'sosial';
         
+        // Track 'Quiz Completed' event with Vercel Analytics
+        if (window.va) {
+            window.va('event', { name: 'Quiz Completed', data: { result: dominantKey } });
+        }
+        
         const t = translations[currentLang];
         const resultData = t.result_details[dominantKey];
         
