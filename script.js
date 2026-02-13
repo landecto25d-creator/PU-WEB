@@ -579,6 +579,16 @@ function showResult() {
             <p style="font-size: 14px; opacity: 0.6; margin: 0;">
                 ${t.result.score_label}: ${t.result.categories.analisis}:${scores.analisis} ${t.result.categories.kreatif}:${scores.kreatif} ${t.result.categories.praktik}:${scores.praktik} ${t.result.categories.sosial}:${scores.sosial}
             </p>
+            
+            ${dominantKey === 'sosial' ? `
+            <div class="mt-4">
+                <a href="https://pu-ir-web-mckc.vercel.app/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                    <div class="button" style="background: linear-gradient(135deg, #0ba360 0%, #3cba92 100%); width: 100%;">
+                        <p class="buttonText m-0 text-center">Tes Kecocokan IR</p>
+                    </div>
+                </a>
+            </div>
+            ` : ''}
         `;
     }
 }
