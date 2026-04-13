@@ -435,16 +435,16 @@ function updateProgressBar() {
             
             if (i === currentNum) {
                 // Active Question: Glowing/Lit
-                seg.style.background = '#ffffff';
-                seg.style.boxShadow = '0 0 8px rgba(255, 255, 255, 0.8)';
+                seg.style.background = '#000000';
+                seg.style.boxShadow = '0 0 8px rgba(0, 0, 0, 0.4)';
                 seg.style.opacity = '1';
             } else if (i < currentNum) {
                 // Past Questions: Semi-lit/completed
-                seg.style.background = 'rgba(255, 255, 255, 0.5)';
+                seg.style.background = 'rgba(0, 0, 0, 0.5)';
                 seg.style.boxShadow = 'none';
             } else {
                 // Future Questions: Darker/Idle
-                seg.style.background = 'rgba(255, 255, 255, 0.1)';
+                seg.style.background = 'rgba(0, 0, 0, 0.1)';
                 seg.style.boxShadow = 'none';
             }
             barInner.appendChild(seg);
@@ -557,7 +557,7 @@ function showResult() {
                 <p style="font-size: 18px; margin-bottom: 0;">${resultData.desc}</p>
             </div>
 
-            <div class="text-start" style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 15px; margin-bottom: 20px;">
+            <div class="text-start" style="background: rgba(0,0,0,0.05); padding: 20px; border-radius: 15px; margin-bottom: 20px;">
                 <div class="row g-3">
                     <div class="col-12">
                         <strong style="font-size: 18px;">${t.result.jurusan_label}</strong>

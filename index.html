@@ -20,11 +20,11 @@
 </head>
 <body class="main d-flex flex-column align-items-center">
     <!-- Language Selection Modal -->
-    <div id="language-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(120deg, #02050a 0%, #06142e 100%); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <div id="language-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #ffffff; z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <!-- Back Button (Hidden by default, shown when opened via settings) -->
         <a href="#" class="btn-back" id="modal-back-btn" onclick="closeLanguageModal()" style="display: none; position: absolute; top: 20px; left: 20px;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 19L8 12L15 5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 19L8 12L15 5" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </a>
 
@@ -52,15 +52,15 @@
         <!-- Language Settings Button -->
         <div class="settings-btn" onclick="openLanguageModal()" style="position: absolute; top: 20px; right: 20px; cursor: pointer; z-index: 10;">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2 12H22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 12H22" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </div>
 
         <!-- Judul -->
         <div class="judul mt-5">
-            <img src="assets/3.png" alt="Career Quest" style="width: 500px; max-width: 100%; height: auto;">
+            <img src="assets/M2M LOGO.jpg" alt="Career Quest" style="width: 600px; max-width: 100%; height: auto;">
         </div>
 
         <!-- Content Wrapper -->
@@ -92,7 +92,7 @@
         <!-- Back Button -->
         <a href="#" class="btn-back" id="btn-back" onclick="handleBack(event)">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 19L8 12L15 5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 19L8 12L15 5" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </a>
 
@@ -101,7 +101,7 @@
             <div id="progress-bar-inner" class="d-flex" style="gap: 5px; margin-bottom: 5px;">
                 <!-- Progress segments injected by JS -->
             </div>
-            <p id="progress-text" class="text-center text-white">Soal 1 dari 10</p>
+            <p id="progress-text" class="text-center text-dark">Soal 1 dari 10</p>
         </div>
 
         <div class="container">
