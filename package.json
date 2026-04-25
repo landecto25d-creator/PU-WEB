@@ -4,8 +4,6 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,8 +20,5 @@
   "homepage": "https://github.com/landecto25d-creator/PU-WEB#readme",
   "dependencies": {
     "firebase": "^12.12.1"
-  },
-  "devDependencies": {
-    "vite": "^8.0.10"
   }
 }
