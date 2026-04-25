@@ -38,13 +38,26 @@ const recordVisit = async () => {
 recordVisit();
 
 // Expose a global function to be called from script.js to record the test result
-window.recordResult = async (resultType) => {
+window.recordResult = async (category) => {
     try {
         const statsRef = doc(db, 'stats', 'results');
-        // resultType could be 'analisis', 'kreatif', 'praktik', 'sosial'
-        await setDoc(statsRef, { [resultType]: increment(1) }, { merge: true });
-        console.log(`Result '${resultType}' recorded!`);
+        const updateData = {};
+        updateData[category] = increment(1);
+        
+        await setDoc(statsRef, updateData, { merge: true });
+        console.log(`Result recorded for: ${category}`);
     } catch (e) {
         console.error("Error updating result count: ", e);
+    }
+};
+
+// Expose a function to track clicks to the IR Web
+window.recordIRClick = async () => {
+    try {
+        const statsRef = doc(db, 'stats', 'ir_clicks');
+        await setDoc(statsRef, { count: increment(1) }, { merge: true });
+        console.log("IR Click recorded!");
+    } catch (e) {
+        console.error("Error updating IR click count: ", e);
     }
 };
