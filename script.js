@@ -547,6 +547,11 @@ function showResult() {
             window.va('event', { name: 'Quiz Completed', data: { result: dominantKey } });
         }
         
+        // Track result in Firebase Firestore
+        if (window.recordResult) {
+            window.recordResult(dominantKey);
+        }
+        
         const t = translations[currentLang];
         const resultData = t.result_details[dominantKey];
         
