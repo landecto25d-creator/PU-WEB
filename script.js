@@ -603,4 +603,24 @@ function showResult() {
     }
 }
 
+function resetQuiz() {
+    // Reset Variables
+    scores = { analisis: 0, kreatif: 0, praktik: 0, sosial: 0 };
+    historyStack = [];
+    availableQuestions = ['q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10'];
+    currentQuestionId = 'q1';
+    
+    // Switch Views
+    document.getElementById('quiz-page').style.display = 'none';
+    document.getElementById('result').style.display = 'none'; 
+    
+    // Trigger Landing Animation
+    const landing = document.getElementById('landing-page');
+    landing.style.display = 'block';
+    // Reset animation
+    landing.classList.remove('animate-pop');
+    void landing.offsetWidth; // Force reflow
+    landing.classList.add('animate-pop');
+}
+
 
